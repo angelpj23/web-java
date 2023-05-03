@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, 
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,
+        td {
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="texto">
+        <h1>
+            DATOS
+        </h1>
+        <button id= "parsear">PARSEAR </button>
+    </div>
+    <table id="demo"></table>
+    <script>
+        document.getElementById("parsear").addEventListener("click", parsear);
+        function parsear(){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    parsearXML(this);
+                }
+            };
+            xhr.open("GET", "data.xml", true);
+            xhr.send();
+        }
+        function parsear(xml){
+            var docXml = xml.responseXml;
+            var tabla = "<tr><th>Dia</th></tr><tr><th>Inicio</th></tr><tr><th>Fin</th></tr>";
+            var factura = docXml.getElementByTagName("CD");
+            for (var i = 0; i <factura.length; i++){
+                tabla += "<tr><td>";
+                tabla += factura[i].getElementByTagName("Dia")[0].textContent;
+                tabla += "</tr></td>";
+                tabla += "<tr><td>";
+                tabla += factura[i].getElementByTagName("Inicio")[0].textContent;
+                tabla += "<tr><td>";
+                tabla += "</tr></td>";
+                tabla += factura[i].getElementByTagName("Fin")[0].textContent;
+                tabla += "</tr></td>";
+            }
+            document.getElementById("demo").innerHTML = tabla;
+        }
+
+    </script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+.body
+{
+    margin: 0;
+    padding: 0;
+}
+.content-body
+{
+    background-color: rgb(53, 53, 72);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.content-calculator
+{
+    background-color: rgb(35, 35, 202);
+    width: 400px;
+    height: 450px;
+    border-radius: 20px;
+    box-shadow: 30px rgb(red);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 85px;
+    grid-gap: 20px;
+}
+.screen
+{
+    background-color: rgb(253, 253, 253);
+    border-radius: 20px;
+    color: rgb(red);
+    padding: 20px;
+    grid-column: 1/5;
+}
+.screen > input
+{
+    background-color: none;
+    border: none;
+    color: inherit;
+    padding: 0px;
+    outline: inherit;
+    font-size: 40px;
+    width: 100%;
+}
+.btn-cal
+{
+    background-color: white;
+}
+.btn-cal-radius
+{
+    border-radius: 20px;
+}
+.btn-cal>input
+{
+    border: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+    outline: none;
+    color:blue;
+    font-size: 40px;
+}
+
+.btn-cal > .equal
+{
+    background-color: green;
+}
+
+
+.btn-cal > .clean
+{
+    background-color: red;
+}
+.btn-cal :hover
+{
+    background-color: orange;
+}

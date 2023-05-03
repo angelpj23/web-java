@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1 class="title">Combinacion HTML, CSS y JavaScript</h1>
+<button type="button" onclick="showme();">Tocame</button>
+<!-- el div all cumple la funcion de cerrar la ventana si hay click fuera de ella -->
+<div class="all" onclick="down();"> 
+<div class="message" id="message">
+  <!-- Modal content -->
+  <div class="message-content">
+    <span class="close" id="close" onclick="down();">&times;</span>
+    <p>Esta ready... 🍇Uvaaaaaa🍇</p>
+  </div>
+</div>
+</div>
+<script src="./data.js"></script>
+</body>
+</html>
